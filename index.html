@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    
     <div class="container">
         <h1>Instagram Insights - Who doesn't follow you back</h1>
-
         <div class="file-inputs">
             <label for="followersFile" class="file-label">Select Followers JSON:</label>
             <input type="file" id="followersFile" accept=".json">
@@ -23,7 +23,18 @@
         <h2>Results:</h2>
         <ul id="result"></ul>
     </div>
-
+    <div class="instructions">
+        <h2>How to Use</h2>
+        <p><strong>1. Download Instagram Data</strong>:</p>
+        <p>- Request your data from Instagram under Settings > Accounts Center > Your information and permissions > Download your information.</p>
+        <p>- <strong>Important</strong>: Ensure that you download the data in JSON format rather than HTML format. The app only supports JSON files.</p>
+        <br>
+        <p><strong>2. Upload Files</strong>:</p>
+        <p>Upload your <code>followers_1.json</code> and <code>following.json</code> files using the file inputs on this page.</p>
+        <br>
+        <p><strong>3. Check Results</strong>:</p>
+        <p>Click the "Check who doesn't follow back" button to see a list of users you follow who do not follow you back. Each username will be displayed as a clickable link to their Instagram profile.</p>
+    </div>
     <script src="app.js"></script>
 </body>
 </html>
