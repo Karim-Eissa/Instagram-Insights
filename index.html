@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Insights</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Instagram Insights - Who doesn't follow you back</h1>
+
+        <div class="file-inputs">
+            <label for="followersFile" class="file-label">Select Followers JSON:</label>
+            <input type="file" id="followersFile" accept=".json">
+
+            <label for="followingsFile" class="file-label">Select Followings JSON:</label>
+            <input type="file" id="followingsFile" accept=".json">
+        </div>
+
+        <button class="check-button" onclick="checkFollowers()">Check who doesn't follow back</button>
+
+        <h2>Results:</h2>
+        <ul id="result"></ul>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
