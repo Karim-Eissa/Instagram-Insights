@@ -27,16 +27,22 @@ function checkFollowers() {
     }
 
     // Extract followers' usernames
-    const followersSet = new Set(followersData.map(follower => follower.string_list_data[0].value));
+    const followersSet = new Set(
+        followersData.map(f => f.string_list_data[0].value.toLowerCase())
+      );
 
     // Extract followings' usernames and links
+    // Extract followings' usernames and links
     const followingsList = followingsData.relationships_following.map(following => ({
-        username: following.string_list_data[0].value,
+        username: following.title,                 // ✅ FIX
         link: following.string_list_data[0].href
     }));
 
+
     // Find who you follow but they don't follow you back
-    const notFollowingBack = followingsList.filter(user => !followersSet.has(user.username));
+    const notFollowingBack = followingsList.filter(
+        u => !followersSet.has(u.username.toLowerCase())
+      );
 
     // Display results
     const resultList = document.getElementById('result');
@@ -45,7 +51,7 @@ function checkFollowers() {
         const li = document.createElement('li');
         
         const link = document.createElement('a');
-        link.href = user.link;
+        link.href = `https://www.instagram.com/${user.username}/`;
         link.textContent = user.username;
         link.target = '_blank'; 
         link.classList.add('profile-link'); 
